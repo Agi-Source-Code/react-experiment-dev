@@ -54,6 +54,25 @@ const ReactNoopUpdateQueue = {
    * @param {?string} callerName name of the calling function in the public API.
    * @internal
    */
+  enqueueForUpdate: function (publicInstance, callback, callerName) {
+    warnNoop(publicInstance, "forceUpdate");
+  },
+
+  /**
+   * Replaces all of the state. Always use this or
+   * `setState` to mutate state. You should treat
+   * `this.state` as immutable.
+   *
+   * There is no guarantee that `this.state` will be
+   * immediately updated, so accessing `this.state`
+   * after calling this method may return the old value.
+   *
+   * @param {ReactClass} publicInstance the instance that should rerender.
+   * @param {object} completeState Next state.
+   * @param {?function} callback Called after component is update.
+   * @param {?string} callerName name of the calling function in the public API.
+   * @internal
+   */
   enqueueReplaceState: function (
     publicInstance,
     completeState,
