@@ -2,9 +2,11 @@
  * @flow
  */
 
-import { Component, PureComponent } from "./packages/react";
+import { createRef, Component, PureComponent, createContext } from "./packages/react";
 import Child1 from "./Components/Child1";
 
+const ThemeContext = createContext('light');
+console.log(ThemeContext)
 class App extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +15,7 @@ class App extends Component {
     this.state = {
       foo: "bar",
     };
+    this.inputRef = createRef();
   }
 
   render() {
@@ -24,3 +27,5 @@ class App extends Component {
 }
 
 new App().render();
+
+

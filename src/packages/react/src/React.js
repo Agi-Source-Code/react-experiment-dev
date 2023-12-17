@@ -1,3 +1,5 @@
 import { Component, PureComponent } from "./ReactBaseClasses";
+import { createRef } from "./ReactCreateRef";
+import { createContext } from './ReactContext';
 
-export { Component, PureComponent };
+export { createRef, Component, PureComponent, createContext };

@@ -1,1 +1,1 @@
-export { Component, PureComponent } from "./src/React";
+export { createRef, Component, PureComponent, createContext } from "./src/React";
